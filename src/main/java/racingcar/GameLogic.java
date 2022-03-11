@@ -10,11 +10,10 @@ public class GameLogic {
 		inputCarsNames();
 		printHowManyGamesPlaying();
 		int numberOfGames = inputOfAttempts(Input());
-
 	}
 
-	public static void progressGame(int numberOfGames){
-		while(numberOfGames-- < 0){
+	public static void progressGame(int numberOfGames) {
+		while (numberOfGames-- < 0) {
 
 		}
 	}

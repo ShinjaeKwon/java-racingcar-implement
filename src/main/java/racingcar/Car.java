@@ -11,18 +11,19 @@ public class Car {
 	}
 
 	public static Car createCar(String name) {
-		if (FormChecking.checkNameLength()) {
+		if (FormChecking.checkNameLength(name)) {
 			return new Car(name);
 		}
 		return createCar(UserInputHandler.Input());
 	}
 
-	public static Car[] createAsManyCars(String carsNames){
+	public static Car[] createAsManyCars(String carsNames) {
 		StringTokenizer carsNamesTokens = new StringTokenizer(carsNames, ",");
 		int numberOfCars = carsNamesTokens.countTokens();
 		Car[] carsNamesArray = new Car[numberOfCars];
-		for(int cars=0; cars<numberOfCars; cars++){
-			carsNamesArray[cars] = new Car(carsNamesTokens.nextToken());
+		for (int cars = 0; cars < numberOfCars; cars++) {
+			String carName = carsNamesTokens.nextToken();
+			carsNamesArray[cars] = createCar(carName);
 		}
 		return carsNamesArray;
 	}

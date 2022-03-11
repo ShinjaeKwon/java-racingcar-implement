@@ -10,18 +10,16 @@ public class UserInputHandler {
 		return readLine();
 	}
 
-	public static int inputOfAttempts(String input){
-
-		if(FormChecking.isNumber(input)) {
+	public static int inputOfAttempts(String input) {
+		if (FormChecking.isNumber(input)) {
 			return Integer.parseInt(input);
 		}
 		return inputOfAttempts(input);
 	}
 
-	public static void inputCarsNames(){
+	public static void inputCarsNames() {
 		String carsNames = readLine();
 		Car.createAsManyCars(carsNames);
-
 	}
 
 }
