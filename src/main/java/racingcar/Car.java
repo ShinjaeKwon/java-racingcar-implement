@@ -1,12 +1,18 @@
 package racingcar;
 
 public class Car {
-    private final String name;
-    private int position = 0;
+	private final String name;
+	private int position = 0;
 
-    public Car(String name) {
-        this.name = name;
-    }
+	public Car(String name) {
+		this.name = name;
+	}
 
-    // 추가 기능 구현
+	public static Car createCar(String name) {
+		if (FormChecking.checkNameLength()) {
+			return new Car(name);
+		}
+		return createCar(UserInputHandler.againInput());
+	}
+
 }
