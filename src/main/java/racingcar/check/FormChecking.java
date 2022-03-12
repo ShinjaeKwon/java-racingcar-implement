@@ -48,7 +48,7 @@ public class FormChecking {
 		return true;
 	}
 
-	public static boolean checkNull(Car car) {
+	public static boolean isNull(Car car) {
 		return car == null;
 	}
 

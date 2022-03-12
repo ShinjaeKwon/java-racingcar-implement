@@ -5,7 +5,6 @@ import static racingcar.GameLogic.*;
 import java.util.ArrayList;
 
 import racingcar.Car;
-import racingcar.JudgementWinner;
 import racingcar.check.NumberChecking;
 
 public class PrintHandler {
@@ -47,7 +46,7 @@ public class PrintHandler {
 		for (int car = NUMBER_ZERO; car < carsNamesList.size(); car++) {
 			System.out.print(carsNamesList.get(car).getName());
 			if (NumberChecking.isListLastIndex(carsNamesList, car)) {
-				System.out.println();
+				printEnter();
 				continue;
 			}
 			System.out.print(", ");
@@ -61,7 +60,7 @@ public class PrintHandler {
 	public static void printRacingResult(ArrayList<Car> carsNamesList) {
 		for (Car car : carsNamesList) {
 			System.out.print(car.getName() + " : ");
-			for (int process = 0; process < car.getPosition(); process++) {
+			for (int process = NUMBER_ZERO; process < car.getPosition(); process++) {
 				System.out.print("-");
 			}
 			printEnter();

@@ -16,7 +16,7 @@ public class GameLogic {
 		printInputCarsNames();
 		ArrayList<Car> carsNamesList = inputCarsNames();
 		printHowManyGamesPlaying();
-		int numberOfGames = inputOfAttempts(Input());
+		int numberOfGames = inputOfAttempts(input());
 
 		printResult();
 		for (int game = NUMBER_ZERO; game < numberOfGames; game++) {
@@ -29,7 +29,7 @@ public class GameLogic {
 		for (int car = NUMBER_ZERO; car < carsNamesList.size(); car++) {
 			int randomNumber = RandomNumber.makeRandomNumber();
 
-			if (NumberChecking.isJudgeForward(randomNumber)) {
+			if (NumberChecking.isForward(randomNumber)) {
 				Car.forward(carsNamesList.get(car));
 			}
 		}

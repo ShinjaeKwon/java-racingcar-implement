@@ -9,7 +9,7 @@ import racingcar.check.FormChecking;
 
 public class UserInputHandler {
 
-	public static String Input() {
+	public static String input() {
 		return readLine();
 	}
 
@@ -17,7 +17,7 @@ public class UserInputHandler {
 		if (FormChecking.isNumber(input)) {
 			return Integer.parseInt(input);
 		}
-		return inputOfAttempts(Input());
+		return inputOfAttempts(input());
 	}
 
 	public static ArrayList<Car> inputCarsNames() {

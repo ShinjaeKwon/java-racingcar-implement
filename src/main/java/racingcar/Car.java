@@ -28,7 +28,7 @@ public class Car {
 		while (carsNamesTokens.hasMoreTokens()) {
 			String carName = carsNamesTokens.nextToken();
 			Car car = createCar(carName);
-			if (FormChecking.checkNull(car)) {
+			if (FormChecking.isNull(car)) {
 				carsNamesTokens = new StringTokenizer(UserInputHandler.lengthExceptionAgainInput(), ",");
 				continue;
 			}
