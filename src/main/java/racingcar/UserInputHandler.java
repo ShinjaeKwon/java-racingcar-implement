@@ -12,13 +12,18 @@ public class UserInputHandler {
 		if (FormChecking.isNumber(input)) {
 			return Integer.parseInt(input);
 		}
-		return inputOfAttempts(input);
+		return inputOfAttempts(Input());
 	}
 
 	public static Car[] inputCarsNames() {
 		String carsNames = readLine();
 		Car[] carsNamesArray = Car.createAsManyCars(carsNames);
 		return carsNamesArray;
+	}
+
+	public static String lengthExceptionAgainInput() {
+		PrintHandler.printAgainInputNames();
+		return readLine();
 	}
 
 }

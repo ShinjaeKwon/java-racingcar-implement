@@ -16,4 +16,7 @@ public class ExceptionHandler {
 	private static void throwIllegalArgumentExceptionWithMessage(String message) {
 		throw new IllegalArgumentException(message);
 	}
+
+	//TODO 자동차 이름 공백 에러
+
 }
