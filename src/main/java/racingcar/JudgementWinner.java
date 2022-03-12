@@ -10,7 +10,11 @@ public class JudgementWinner {
 
 	public static void judgeWinner(ArrayList<Car> carsNamesList) {
 		removeLoser(carsNamesList, getHighPosition(carsNamesList));
-		PrintHandler.printWinner(carsNamesList);
+		if(checkSoloWin(carsNamesList)){
+			PrintHandler.printSoloWinner(carsNamesList);
+			return;
+		}
+		PrintHandler.printCoWinner(carsNamesList);
 	}
 
 	private static void removeLoser(ArrayList<Car> carsNamesList, int highPosition) {
@@ -30,6 +34,10 @@ public class JudgementWinner {
 			}
 		}
 		return highPosition;
+	}
+
+	public static boolean checkSoloWin(ArrayList<Car> carsNamesList) {
+		return carsNamesList.size() == NUMBER_ONE;
 	}
 
 }

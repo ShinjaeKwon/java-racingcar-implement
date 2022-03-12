@@ -37,6 +37,11 @@ public class Car {
 		return carsNamesList;
 	}
 
+	public static ArrayList<Car> getCars(String carsNames) {
+		ArrayList<Car> carsNamesList = Car.createAsManyCars(carsNames);
+		return carsNamesList;
+	}
+
 	public static void forward(Car car) {
 		car.position++;
 	}

@@ -22,8 +22,7 @@ public class UserInputHandler {
 
 	public static ArrayList<Car> inputCarsNames() {
 		String carsNames = readLine();
-		ArrayList<Car> carsNamesList = Car.createAsManyCars(carsNames);
-		return carsNamesList;
+		return Car.getCars(carsNames);
 	}
 
 	public static String lengthExceptionAgainInput() {
