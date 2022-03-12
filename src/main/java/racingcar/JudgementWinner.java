@@ -4,6 +4,8 @@ import static racingcar.GameLogic.*;
 
 import java.util.ArrayList;
 
+import racingcar.handler.PrintHandler;
+
 public class JudgementWinner {
 
 	public static void judgeWinner(ArrayList<Car> carsNamesList) {

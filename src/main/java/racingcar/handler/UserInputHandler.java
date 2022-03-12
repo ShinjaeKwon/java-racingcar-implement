@@ -1,8 +1,11 @@
-package racingcar;
+package racingcar.handler;
 
 import static camp.nextstep.edu.missionutils.Console.*;
 
 import java.util.ArrayList;
+
+import racingcar.Car;
+import racingcar.check.FormChecking;
 
 public class UserInputHandler {
 

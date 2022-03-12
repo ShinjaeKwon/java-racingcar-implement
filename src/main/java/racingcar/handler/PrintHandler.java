@@ -1,8 +1,10 @@
-package racingcar;
+package racingcar.handler;
 
 import static racingcar.GameLogic.*;
 
 import java.util.ArrayList;
+
+import racingcar.Car;
 
 public class PrintHandler {
 

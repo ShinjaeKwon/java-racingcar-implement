@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.handler;
 
 public class ExceptionHandler {
 

@@ -3,6 +3,9 @@ package racingcar;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import racingcar.check.FormChecking;
+import racingcar.handler.UserInputHandler;
+
 public class Car {
 	private final String name;
 	private int position = 0;

@@ -1,9 +1,11 @@
 package racingcar;
 
-import static racingcar.PrintHandler.*;
-import static racingcar.UserInputHandler.*;
+import static racingcar.handler.PrintHandler.*;
+import static racingcar.handler.UserInputHandler.*;
 
 import java.util.ArrayList;
+
+import racingcar.check.NumberChecking;
 
 public class GameLogic {
 

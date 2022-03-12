@@ -1,7 +1,11 @@
-package racingcar;
+package racingcar.check;
 
 import static racingcar.GameLogic.*;
-import static racingcar.PrintHandler.*;
+import static racingcar.handler.PrintHandler.*;
+
+import racingcar.Car;
+import racingcar.handler.ExceptionHandler;
+import racingcar.handler.PrintHandler;
 
 public class FormChecking {
 

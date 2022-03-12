@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.check;
 
 public class NumberChecking {
 
