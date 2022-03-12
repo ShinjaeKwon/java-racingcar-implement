@@ -2,8 +2,6 @@ package racingcar;
 
 import static camp.nextstep.edu.missionutils.Console.*;
 
-import java.util.StringTokenizer;
-
 public class UserInputHandler {
 
 	public static String Input() {
@@ -17,9 +15,10 @@ public class UserInputHandler {
 		return inputOfAttempts(input);
 	}
 
-	public static void inputCarsNames() {
+	public static Car[] inputCarsNames() {
 		String carsNames = readLine();
-		Car.createAsManyCars(carsNames);
+		Car[] carsNamesArray = Car.createAsManyCars(carsNames);
+		return carsNamesArray;
 	}
 
 }

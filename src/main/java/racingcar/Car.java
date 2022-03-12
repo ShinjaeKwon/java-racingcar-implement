@@ -28,4 +28,8 @@ public class Car {
 		return carsNamesArray;
 	}
 
+	public static void forward(Car carName) {
+		carName.position += 1;
+	}
+
 }
