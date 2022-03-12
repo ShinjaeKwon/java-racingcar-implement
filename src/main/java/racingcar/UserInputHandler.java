@@ -2,6 +2,8 @@ package racingcar;
 
 import static camp.nextstep.edu.missionutils.Console.*;
 
+import java.util.ArrayList;
+
 public class UserInputHandler {
 
 	public static String Input() {
@@ -15,10 +17,10 @@ public class UserInputHandler {
 		return inputOfAttempts(Input());
 	}
 
-	public static Car[] inputCarsNames() {
+	public static ArrayList<Car> inputCarsNames() {
 		String carsNames = readLine();
-		Car[] carsNamesArray = Car.createAsManyCars(carsNames);
-		return carsNamesArray;
+		ArrayList<Car> carsNamesList = Car.createAsManyCars(carsNames);
+		return carsNamesList;
 	}
 
 	public static String lengthExceptionAgainInput() {

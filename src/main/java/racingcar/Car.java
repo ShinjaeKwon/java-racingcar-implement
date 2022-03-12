@@ -1,5 +1,6 @@
 package racingcar;
 
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Car {
@@ -11,25 +12,29 @@ public class Car {
 	}
 
 	public static Car createCar(String name) {
-		if (FormChecking.checkNameLength(name)) {
-			return new Car(name);
+		if (!FormChecking.checkNameLength(name)) {
+			return null;
 		}
-		return createCar(UserInputHandler.Input());
+		return new Car(name);
 	}
 
-	public static Car[] createAsManyCars(String carsNames) {
+	public static ArrayList<Car> createAsManyCars(String carsNames){
 		StringTokenizer carsNamesTokens = new StringTokenizer(carsNames, ",");
-		int numberOfCars = carsNamesTokens.countTokens();
-		Car[] carsNamesArray = new Car[numberOfCars];
-		for (int cars = 0; cars < numberOfCars; cars++) {
+		ArrayList<Car> carsNamesList = new ArrayList<>();
+		while (carsNamesTokens.hasMoreTokens()){
 			String carName = carsNamesTokens.nextToken();
-			carsNamesArray[cars] = createCar(carName);
+			Car car = createCar(carName);
+			if(FormChecking.checkNull(car)){
+				carsNamesTokens = new StringTokenizer(UserInputHandler.lengthExceptionAgainInput(), ",");
+				continue;
+			}
+			carsNamesList.add(car);
 		}
-		return carsNamesArray;
+		return carsNamesList;
 	}
 
-	public static void forward(Car carName) {
-		carName.position += 1;
+	public static void forward(Car car) {
+		car.position ++;
 	}
 
 }

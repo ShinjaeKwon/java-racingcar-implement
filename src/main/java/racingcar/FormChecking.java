@@ -44,5 +44,8 @@ public class FormChecking {
 		return true;
 	}
 
-	//TODO 공백 체크 메서드
+	public static boolean checkNull(Car car) {
+		return car == null;
+	}
+
 }
