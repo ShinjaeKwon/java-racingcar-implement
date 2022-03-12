@@ -18,13 +18,14 @@ public class Car {
 		return new Car(name);
 	}
 
-	public static ArrayList<Car> createAsManyCars(String carsNames){
+	public static ArrayList<Car> createAsManyCars(String carsNames) {
 		StringTokenizer carsNamesTokens = new StringTokenizer(carsNames, ",");
 		ArrayList<Car> carsNamesList = new ArrayList<>();
-		while (carsNamesTokens.hasMoreTokens()){
+
+		while (carsNamesTokens.hasMoreTokens()) {
 			String carName = carsNamesTokens.nextToken();
 			Car car = createCar(carName);
-			if(FormChecking.checkNull(car)){
+			if (FormChecking.checkNull(car)) {
 				carsNamesTokens = new StringTokenizer(UserInputHandler.lengthExceptionAgainInput(), ",");
 				continue;
 			}
@@ -34,7 +35,15 @@ public class Car {
 	}
 
 	public static void forward(Car car) {
-		car.position ++;
+		car.position++;
+	}
+
+	public int getPosition() {
+		return position;
+	}
+
+	public String getName() {
+		return name;
 	}
 
 }

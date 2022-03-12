@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class GameLogic {
 
 	public static final int NUMBER_ZERO = 0;
+	public static final int NUMBER_ONE = 1;
 
 	public static void startGame() {
 		printInputCarsNames();
@@ -18,6 +19,7 @@ public class GameLogic {
 		for (int game = NUMBER_ZERO; game < numberOfGames; game++) {
 			progressGame(carsNamesList);
 		}
+		JudgementWinner.judgeWinner(carsNamesList);
 	}
 
 	public static void progressGame(ArrayList<Car> carsNamesList) {
