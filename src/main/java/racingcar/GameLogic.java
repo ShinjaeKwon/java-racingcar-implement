@@ -18,6 +18,7 @@ public class GameLogic {
 		printHowManyGamesPlaying();
 		int numberOfGames = inputOfAttempts(Input());
 
+		printResult();
 		for (int game = NUMBER_ZERO; game < numberOfGames; game++) {
 			progressGame(carsNamesList);
 		}
@@ -32,6 +33,7 @@ public class GameLogic {
 				Car.forward(carsNamesList.get(car));
 			}
 		}
+		printRacingResult(carsNamesList);
 	}
 
 }

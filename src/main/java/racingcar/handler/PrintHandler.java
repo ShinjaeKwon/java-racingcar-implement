@@ -13,6 +13,7 @@ public class PrintHandler {
 	public static final String AGAIN_INPUT_CARS_NAMES = "자동차 이름을 다시 입력하세요.(이름은 5글자 이하여야 합니다.)";
 	public static final String LENGTH_EXCEPTION_NAME = " 자동차부터 이름을 다시 입력하세요.(이름은 쉼표(,) 기준으로 구분).";
 	public static final String WINNER = "최종 우승자 : ";
+	public static final String RESULT = "실행 결과";
 
 	public static void printInputCarsNames() {
 		System.out.println(INPUT_CARS_NAMES);
@@ -55,6 +56,23 @@ public class PrintHandler {
 		}
 	}
 
-	//TODO 차수별 실행 결과
+	public static void printResult() {
+		System.out.println(RESULT);
+	}
+
+	public static void printRacingResult(ArrayList<Car> carsNamesList) {
+		for (Car car : carsNamesList) {
+			System.out.print(car.getName() + " : ");
+			for (int process = 0; process < car.getPosition(); process++) {
+				System.out.print("-");
+			}
+			printEnter();
+		}
+		printEnter();
+	}
+
+	public static void printEnter() {
+		System.out.println();
+	}
 
 }
