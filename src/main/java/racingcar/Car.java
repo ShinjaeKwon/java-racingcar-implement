@@ -41,7 +41,7 @@ public class Car {
 		return Car.createAsManyCars(carsNames);
 	}
 
-	public static void forward(Car car) {
+	public static void moveForward(Car car) {
 		car.position++;
 	}
 

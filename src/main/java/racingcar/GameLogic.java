@@ -28,7 +28,7 @@ public class GameLogic {
 			int randomNumber = RandomNumber.makeRandomNumber();
 
 			if (NumberChecking.isForward(randomNumber)) {
-				Car.forward(car);
+				Car.moveForward(car);
 			}
 		}
 		PrintHandler.printRacingResult(carsNamesList);
