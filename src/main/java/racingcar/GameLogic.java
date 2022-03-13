@@ -16,7 +16,7 @@ public class GameLogic {
 		PrintHandler.printHowManyGamesPlaying();
 		int numberOfGames = UserInputHandler.inputOfAttempts(readLine());
 
-		PrintHandler.printResult();
+		PrintHandler.printGameStart();
 		for (int game = 0; game < numberOfGames; game++) {
 			progressGame(carsNamesList);
 		}

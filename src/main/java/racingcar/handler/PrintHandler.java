@@ -51,7 +51,7 @@ public class PrintHandler {
 		}
 	}
 
-	public static void printResult() {
+	public static void printGameStart() {
 		System.out.println(RESULT);
 	}
 
