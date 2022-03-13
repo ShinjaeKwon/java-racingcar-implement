@@ -8,11 +8,7 @@ public class JudgementWinner {
 
 	public static void judgeWinner(ArrayList<Car> carsNamesList) {
 		removeLoser(carsNamesList, getHighPosition(carsNamesList));
-		if (isSoloWin(carsNamesList)) {
-			PrintHandler.printSoloWinner(carsNamesList);
-			return;
-		}
-		PrintHandler.printCoWinner(carsNamesList);
+		PrintHandler.printWinner(carsNamesList);
 	}
 
 	private static void removeLoser(ArrayList<Car> carsNamesList, int highPosition) {

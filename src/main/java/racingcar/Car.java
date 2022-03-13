@@ -41,6 +41,14 @@ public class Car {
 		return Car.createAsManyCars(carsNames);
 	}
 
+	public static ArrayList<String> extractWinnerNames(ArrayList<Car> carsNamesList) {
+		ArrayList<String> winnerNames = new ArrayList<>();
+		for (Car car : carsNamesList) {
+			winnerNames.add(car.name);
+		}
+		return winnerNames;
+	}
+
 	public static void moveForward(Car car) {
 		car.position++;
 	}

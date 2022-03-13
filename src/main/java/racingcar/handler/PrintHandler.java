@@ -1,6 +1,8 @@
 package racingcar.handler;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import racingcar.Car;
 import racingcar.check.NumberChecking;
@@ -34,21 +36,11 @@ public class PrintHandler {
 		System.out.println(exception.getMessage());
 	}
 
-	public static void printSoloWinner(ArrayList<Car> carsNamesList) {
-		System.out.print(WINNER);
-		System.out.println(carsNamesList.get(0).getName());
-	}
+	public static void printWinner(ArrayList<Car> carsNamesList) {
 
-	public static void printCoWinner(ArrayList<Car> carsNamesList) {
+		ArrayList<String> winnerList = Car.extractWinnerNames(carsNamesList);
 		System.out.print(WINNER);
-		for (int car = 0; car < carsNamesList.size(); car++) {
-			System.out.print(carsNamesList.get(car).getName());
-			if (NumberChecking.isListLastIndex(carsNamesList, car)) {
-				printEnter();
-				continue;
-			}
-			System.out.print(", ");
-		}
+		System.out.println(String.join(",", winnerList));
 	}
 
 	public static void printGameStart() {
