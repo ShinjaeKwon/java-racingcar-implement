@@ -10,18 +10,18 @@ public class Car {
 	private final String name;
 	private int position = 0;
 
-	public Car(String name) {
+	private Car(String name) {
 		this.name = name;
 	}
 
-	public static Car createCar(String name) {
+	private static Car createCar(String name) {
 		if (!FormChecking.checkNameLength(name)) {
 			return null;
 		}
 		return new Car(name);
 	}
 
-	public static ArrayList<Car> createAsManyCars(String carsNames) {
+	private static ArrayList<Car> createAsManyCars(String carsNames) {
 		StringTokenizer carsNamesTokens = new StringTokenizer(carsNames, ",");
 		ArrayList<Car> carsNamesList = new ArrayList<>();
 
@@ -38,8 +38,7 @@ public class Car {
 	}
 
 	public static ArrayList<Car> getCars(String carsNames) {
-		ArrayList<Car> carsNamesList = Car.createAsManyCars(carsNames);
-		return carsNamesList;
+		return Car.createAsManyCars(carsNames);
 	}
 
 	public static void forward(Car car) {

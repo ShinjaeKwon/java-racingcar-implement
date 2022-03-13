@@ -1,7 +1,5 @@
 package racingcar.handler;
 
-import static racingcar.GameLogic.*;
-
 import java.util.ArrayList;
 
 import racingcar.Car;
@@ -38,12 +36,12 @@ public class PrintHandler {
 
 	public static void printSoloWinner(ArrayList<Car> carsNamesList) {
 		System.out.print(WINNER);
-		System.out.println(carsNamesList.get(NUMBER_ZERO).getName());
+		System.out.println(carsNamesList.get(0).getName());
 	}
 
 	public static void printCoWinner(ArrayList<Car> carsNamesList) {
 		System.out.print(WINNER);
-		for (int car = NUMBER_ZERO; car < carsNamesList.size(); car++) {
+		for (int car = 0; car < carsNamesList.size(); car++) {
 			System.out.print(carsNamesList.get(car).getName());
 			if (NumberChecking.isListLastIndex(carsNamesList, car)) {
 				printEnter();
@@ -60,7 +58,7 @@ public class PrintHandler {
 	public static void printRacingResult(ArrayList<Car> carsNamesList) {
 		for (Car car : carsNamesList) {
 			System.out.print(car.getName() + " : ");
-			for (int process = NUMBER_ZERO; process < car.getPosition(); process++) {
+			for (int process = 0; process < car.getPosition(); process++) {
 				System.out.print("-");
 			}
 			printEnter();

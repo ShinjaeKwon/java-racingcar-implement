@@ -1,7 +1,5 @@
 package racingcar;
 
-import static racingcar.GameLogic.*;
-
 import java.util.ArrayList;
 
 import racingcar.handler.PrintHandler;
@@ -10,7 +8,7 @@ public class JudgementWinner {
 
 	public static void judgeWinner(ArrayList<Car> carsNamesList) {
 		removeLoser(carsNamesList, getHighPosition(carsNamesList));
-		if(isSoloWin(carsNamesList)){
+		if (isSoloWin(carsNamesList)) {
 			PrintHandler.printSoloWinner(carsNamesList);
 			return;
 		}
@@ -18,10 +16,10 @@ public class JudgementWinner {
 	}
 
 	private static void removeLoser(ArrayList<Car> carsNamesList, int highPosition) {
-		for (int car = NUMBER_ZERO; car < carsNamesList.size(); car++) {
+		for (int car = 0; car < carsNamesList.size(); car++) {
 			if (carsNamesList.get(car).getPosition() != highPosition) {
 				carsNamesList.remove(car);
-				car = NUMBER_ZERO;
+				car = 0;
 			}
 		}
 	}
@@ -36,8 +34,8 @@ public class JudgementWinner {
 		return highPosition;
 	}
 
-	public static boolean isSoloWin(ArrayList<Car> carsNamesList) {
-		return carsNamesList.size() == NUMBER_ONE;
+	private static boolean isSoloWin(ArrayList<Car> carsNamesList) {
+		return carsNamesList.size() == 1;
 	}
 
 }

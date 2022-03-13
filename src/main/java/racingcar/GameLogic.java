@@ -1,32 +1,29 @@
 package racingcar;
 
 import static camp.nextstep.edu.missionutils.Console.*;
-import static racingcar.handler.PrintHandler.*;
-import static racingcar.handler.UserInputHandler.*;
 
 import java.util.ArrayList;
 
 import racingcar.check.NumberChecking;
+import racingcar.handler.PrintHandler;
+import racingcar.handler.UserInputHandler;
 
 public class GameLogic {
 
-	public static final int NUMBER_ZERO = 0;
-	public static final int NUMBER_ONE = 1;
-
 	public static void startGame() {
-		printInputCarsNames();
-		ArrayList<Car> carsNamesList = inputCarsNames();
-		printHowManyGamesPlaying();
-		int numberOfGames = inputOfAttempts(readLine());
+		PrintHandler.printInputCarsNames();
+		ArrayList<Car> carsNamesList = UserInputHandler.inputCarsNames();
+		PrintHandler.printHowManyGamesPlaying();
+		int numberOfGames = UserInputHandler.inputOfAttempts(readLine());
 
-		printResult();
-		for (int game = NUMBER_ZERO; game < numberOfGames; game++) {
+		PrintHandler.printResult();
+		for (int game = 0; game < numberOfGames; game++) {
 			progressGame(carsNamesList);
 		}
 		JudgementWinner.judgeWinner(carsNamesList);
 	}
 
-	public static void progressGame(ArrayList<Car> carsNamesList) {
+	private static void progressGame(ArrayList<Car> carsNamesList) {
 		for (Car car : carsNamesList) {
 			int randomNumber = RandomNumber.makeRandomNumber();
 
@@ -34,7 +31,7 @@ public class GameLogic {
 				Car.forward(car);
 			}
 		}
-		printRacingResult(carsNamesList);
+		PrintHandler.printRacingResult(carsNamesList);
 	}
 
 }

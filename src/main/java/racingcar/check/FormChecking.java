@@ -36,7 +36,7 @@ public class FormChecking {
 		return true;
 	}
 
-	public static boolean checkNumber(String input) {
+	private static boolean checkNumber(String input) {
 		for (int character = 0; character < input.length(); character++) {
 			if (input.charAt(character) < '0' || input.charAt(character) > '9') {
 				return false;
