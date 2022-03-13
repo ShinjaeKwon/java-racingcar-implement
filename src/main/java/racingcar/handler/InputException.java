@@ -1,6 +1,6 @@
 package racingcar.handler;
 
-public class ExceptionHandler {
+public class InputException {
 
 	public static final String MORE_THAN_FIVE_CHARACTERS = "[ERROR] 차의 이름이 5글자 이하여야 한다.";
 	public static final String NOT_INPUT_NUMBER = "[ERROR] 시도 횟수는 숫자여야 한다.";
