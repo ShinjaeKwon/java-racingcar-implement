@@ -1,10 +1,7 @@
 package racingcar.check;
 
-import static racingcar.GameLogic.*;
-import static racingcar.handler.PrintHandler.*;
-
 import racingcar.Car;
-import racingcar.handler.ExceptionHandler;
+import racingcar.handler.InputException;
 import racingcar.handler.PrintHandler;
 
 public class FormChecking {
@@ -14,7 +11,7 @@ public class FormChecking {
 	public static boolean checkNameLength(String carName) {
 		if (carName.length() > LENGTH_STANDARD) {
 			try {
-				ExceptionHandler.moreThanFiveCharacters();
+				InputException.moreThanFiveCharacters();
 			} catch (Exception exception) {
 				PrintHandler.printExceptionMessage(exception);
 			} finally {
@@ -28,11 +25,11 @@ public class FormChecking {
 	public static boolean isNumber(String input) {
 		if (!checkNumber(input)) {
 			try {
-				ExceptionHandler.notInputNumber();
+				InputException.notInputNumber();
 			} catch (Exception exception) {
 				PrintHandler.printExceptionMessage(exception);
 			} finally {
-				printHowManyGamesPlaying();
+				PrintHandler.printHowManyGamesPlaying();
 				return false;
 			}
 		}
@@ -40,7 +37,7 @@ public class FormChecking {
 	}
 
 	public static boolean checkNumber(String input) {
-		for (int character = NUMBER_ZERO; character < input.length(); character++) {
+		for (int character = 0; character < input.length(); character++) {
 			if (input.charAt(character) < '0' || input.charAt(character) > '9') {
 				return false;
 			}

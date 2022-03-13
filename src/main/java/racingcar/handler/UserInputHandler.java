@@ -9,15 +9,11 @@ import racingcar.check.FormChecking;
 
 public class UserInputHandler {
 
-	public static String input() {
-		return readLine();
-	}
-
-	public static int inputOfAttempts(String input) {
-		if (FormChecking.isNumber(input)) {
-			return Integer.parseInt(input);
+	public static int inputOfAttempts(String inputNumber) {
+		if (FormChecking.isNumber(inputNumber)) {
+			return Integer.parseInt(inputNumber);
 		}
-		return inputOfAttempts(input());
+		return inputOfAttempts(readLine());
 	}
 
 	public static ArrayList<Car> inputCarsNames() {

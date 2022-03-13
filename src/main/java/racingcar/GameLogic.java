@@ -1,5 +1,6 @@
 package racingcar;
 
+import static camp.nextstep.edu.missionutils.Console.*;
 import static racingcar.handler.PrintHandler.*;
 import static racingcar.handler.UserInputHandler.*;
 
@@ -16,7 +17,7 @@ public class GameLogic {
 		printInputCarsNames();
 		ArrayList<Car> carsNamesList = inputCarsNames();
 		printHowManyGamesPlaying();
-		int numberOfGames = inputOfAttempts(input());
+		int numberOfGames = inputOfAttempts(readLine());
 
 		printResult();
 		for (int game = NUMBER_ZERO; game < numberOfGames; game++) {
