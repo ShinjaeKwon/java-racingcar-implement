@@ -26,11 +26,11 @@ public class GameLogic {
 	}
 
 	public static void progressGame(ArrayList<Car> carsNamesList) {
-		for (int car = NUMBER_ZERO; car < carsNamesList.size(); car++) {
+		for (Car car : carsNamesList) {
 			int randomNumber = RandomNumber.makeRandomNumber();
 
 			if (NumberChecking.isForward(randomNumber)) {
-				Car.forward(carsNamesList.get(car));
+				Car.forward(car);
 			}
 		}
 		printRacingResult(carsNamesList);
