@@ -22,8 +22,8 @@ public class FormChecking {
 		return true;
 	}
 
-	public static boolean isNumber(String input) {
-		if (!checkNumber(input)) {
+	public static boolean isNumber(String inputNumber) {
+		if (!checkNumber(inputNumber)) {
 			try {
 				InputException.notInputNumber();
 			} catch (Exception exception) {
@@ -36,13 +36,14 @@ public class FormChecking {
 		return true;
 	}
 
-	private static boolean checkNumber(String input) {
-		for (int character = 0; character < input.length(); character++) {
-			if (input.charAt(character) < '0' || input.charAt(character) > '9') {
-				return false;
-			}
+	private static boolean checkNumber(String inputNumber) {
+		try {
+			Integer.parseInt(inputNumber);
+			return true;
+		} catch (NumberFormatException exception) {
+			return false;
 		}
-		return true;
+
 	}
 
 	public static boolean isNull(Car car) {
