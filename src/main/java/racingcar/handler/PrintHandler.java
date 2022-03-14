@@ -1,20 +1,17 @@
 package racingcar.handler;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import racingcar.Car;
-import racingcar.check.NumberChecking;
 
 public class PrintHandler {
 
-	public static final String INPUT_CARS_NAMES = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
-	public static final String HOW_MANY_GAMES_PLAYING = "시도할 횟수는 몇회인가요?";
-	public static final String AGAIN_INPUT_CARS_NAMES = "자동차 이름을 다시 입력하세요.(이름은 5글자 이하여야 합니다.)";
-	public static final String LENGTH_EXCEPTION_NAME = " 자동차부터 이름을 다시 입력하세요.(이름은 쉼표(,) 기준으로 구분).";
-	public static final String WINNER = "최종 우승자 : ";
-	public static final String RESULT = "실행 결과";
+	private static final String INPUT_CARS_NAMES = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
+	private static final String HOW_MANY_GAMES_PLAYING = "시도할 횟수는 몇회인가요?";
+	private static final String AGAIN_INPUT_CARS_NAMES = "자동차 이름을 다시 입력하세요.(이름은 5글자 이하여야 합니다.)";
+	private static final String LENGTH_EXCEPTION_NAME = " 자동차부터 이름을 다시 입력하세요.(이름은 쉼표(,) 기준으로 구분).";
+	private static final String WINNER = "최종 우승자 : ";
+	private static final String RESULT = "실행 결과";
 
 	public static void printInputCarsNames() {
 		System.out.println(INPUT_CARS_NAMES);
@@ -37,8 +34,7 @@ public class PrintHandler {
 	}
 
 	public static void printWinner(ArrayList<Car> carsNamesList) {
-
-		ArrayList<String> winnerList = Car.extractWinnerNames(carsNamesList);
+		ArrayList<String> winnerList = Car.extractCarsNames(carsNamesList);
 		System.out.print(WINNER);
 		System.out.println(String.join(",", winnerList));
 	}
@@ -48,18 +44,16 @@ public class PrintHandler {
 	}
 
 	public static void printRacingResult(ArrayList<Car> carsNamesList) {
+		StringBuilder carsNames = new StringBuilder();
 		for (Car car : carsNamesList) {
-			System.out.print(car.getName() + " : ");
+			carsNames.append(car.getName()).append(" : ");
 			for (int process = 0; process < car.getPosition(); process++) {
-				System.out.print("-");
+				carsNames.append("-");
 			}
-			printEnter();
+			carsNames.append("\n");
 		}
-		printEnter();
-	}
-
-	public static void printEnter() {
-		System.out.println();
+		carsNames.append("\n");
+		System.out.println(carsNames);
 	}
 
 }

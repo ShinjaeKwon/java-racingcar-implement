@@ -41,12 +41,12 @@ public class Car {
 		return Car.createAsManyCars(carsNames);
 	}
 
-	public static ArrayList<String> extractWinnerNames(ArrayList<Car> carsNamesList) {
-		ArrayList<String> winnerNames = new ArrayList<>();
+	public static ArrayList<String> extractCarsNames(ArrayList<Car> carsNamesList) {
+		ArrayList<String> carsNames = new ArrayList<>();
 		for (Car car : carsNamesList) {
-			winnerNames.add(car.name);
+			carsNames.add(car.name);
 		}
-		return winnerNames;
+		return carsNames;
 	}
 
 	public static void moveForward(Car car) {
