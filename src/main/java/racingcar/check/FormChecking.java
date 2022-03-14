@@ -14,7 +14,6 @@ public class FormChecking {
 				InputException.moreThanFiveCharacters();
 			} catch (Exception exception) {
 				PrintHandler.printExceptionMessage(exception);
-			} finally {
 				PrintHandler.printExceptionName(carName);
 				return false;
 			}
@@ -28,7 +27,6 @@ public class FormChecking {
 				InputException.notInputNumber();
 			} catch (Exception exception) {
 				PrintHandler.printExceptionMessage(exception);
-			} finally {
 				PrintHandler.printHowManyGamesPlaying();
 				return false;
 			}
